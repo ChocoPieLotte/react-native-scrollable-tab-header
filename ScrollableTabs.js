@@ -112,11 +112,11 @@ class ScrollableTabs extends React.Component{
             const newLineWidth = newLineRight - newLineLeft;
 
             this.state._leftTabUnderline.setValue(newLineWidth / 2 + newLineLeft);
-            this.state._widthTabUnderline.setValue(newLineWidth);
+            this.state._widthTabUnderline.setValue(newLineWidth - 40);
         } else {
             const newLineWidth = lineRight - lineLeft;
             this.state._leftTabUnderline.setValue(newLineWidth / 2 + lineLeft);
-            this.state._widthTabUnderline.setValue(newLineWidth);
+            this.state._widthTabUnderline.setValue(newLineWidth - 40);
         }
     }
 
