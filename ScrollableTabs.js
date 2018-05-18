@@ -112,11 +112,11 @@ class ScrollableTabs extends React.Component{
             const newLineWidth = newLineRight - newLineLeft;
 
             this.state._leftTabUnderline.setValue(newLineWidth / 2 + newLineLeft);
-            this.state._widthTabUnderline.setValue(newLineWidth - 40);
+            this.state._widthTabUnderline.setValue(newLineWidth - (this.props.isExtended ? 0 : 40));
         } else {
             const newLineWidth = lineRight - lineLeft;
             this.state._leftTabUnderline.setValue(newLineWidth / 2 + lineLeft);
-            this.state._widthTabUnderline.setValue(newLineWidth - 40);
+            this.state._widthTabUnderline.setValue(newLineWidth - (this.props.isExtended ? 0 : 40));
         }
     }
 
@@ -236,6 +236,7 @@ ScrollableTabs.propTypes = {
     renderTab: PropTypes.func,
     underlineStyle: PropTypes.object,
     onScroll: PropTypes.func,
+    isExtended: PropTypes.bool
 };
 ScrollableTabs.defaultPropTypes = {
     scrollOffset: 52,
@@ -246,7 +247,8 @@ ScrollableTabs.defaultPropTypes = {
     tabStyle: {},
     tabsContainerStyle: {},
     underlineStyle: {},
-    activeTab: 0
+    activeTab: 0,
+    isExtended: false
 }
 const styles = StyleSheet.create({
     tab: {
