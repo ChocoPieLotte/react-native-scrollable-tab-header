@@ -121,7 +121,7 @@ class ScrollableTabs extends React.Component{
     }
 
     renderTab(name, page, isTabActive, onPressHandler, onLayoutHandler) {
-        const {activeTextColor, inactiveTextColor, textStyle, activeTextStyle,} = this.props;
+        const {activeTextColor, inactiveTextColor, textStyle, activeTextStyle, defaultTextStyle,} = this.props;
         const textColor = isTabActive ? activeTextColor : inactiveTextColor;
         const fontWeight = isTabActive ? 'bold' : 'normal';
 
@@ -134,7 +134,7 @@ class ScrollableTabs extends React.Component{
         onLayout={onLayoutHandler}
             >
             <View style={[styles.tab, this.props.tabStyle,]}>
-    <Text style={[{color: textColor, fontWeight,}, isTabActive ? activeTextStyle : textStyle,]}>
+    <Text style={[{color: textColor, fontWeight,}, isTabActive ? activeTextStyle : textStyle, defaultTextStyle,]}>
         {name}
     </Text>
         </View>
